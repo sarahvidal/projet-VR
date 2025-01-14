@@ -1,0 +1,98 @@
+
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type: exponential; color:#2b2b2b; density:0.15">
+        <a-assets>
+            <a-asset-item id="voiture" src="assets/car.glb"></a-asset-item>
+            <a-asset-item id="lampe" src="assets/lampe.glb"></a-asset-item>
+            <img id="sol" src="assets/parking.jpg">
+        </a-assets>
+
+        <a-light type="ambient" color="#ffffff" intensity="0.8"></a-light>
+
+        <a-entity gltf-model="#voiture" rotation="0 0 0" position="-0.58 0 -3.1" scale="0.5 0.5 0.5"></a-entity>
+
+        <a-light 
+        type="spot" 
+        position="-0.87 0.3 -3.2" 
+        rotation="0 180 0"
+        angle="15" 
+        intensity="1" 
+        distance="5" 
+        color="#fff8ad">
+      </a-light>
+
+      <a-light 
+        type="spot" 
+        position="-0.32 0.3 -3.2" 
+        rotation="0 180 0"
+        angle="15" 
+        intensity="1" 
+        distance="5" 
+        color="#fff8ad">
+      </a-light>
+
+        <a-entity gltf-model="#voiture" rotation="0 180 0" position="-1.7 0 -3" scale="0.5 0.5 0.5"></a-entity>
+
+        <a-entity gltf-model="#voiture" rotation="0 0 0" position="2.9 0 -3.1" scale="0.5 0.5 0.5"></a-entity>
+        
+        <a-entity gltf-model="#lampe" position="0 0 -1.8" scale="0.15 0.15 0.15"></a-entity>
+
+        <a-plane 
+        src="#sol" 
+        position="0 0 -2" 
+        rotation="-90 0 0" 
+        width="10" 
+        height="10"
+        color="#333333" >
+      </a-plane>
+
+      <a-sky color="#2b2b2b"></a-sky>
+      <a-camera  position="0 1.7 5"></a-camera>
+    </a-scene>
+  </body>
+</html>
+
+
+
+<!-- <html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box position="0 0.5 -4" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 2 -4" radius="1" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="0 3.5 -4" rotation="90 30 0" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html> -->
+
+<!-- <html>
+  <head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene >
+        <a-assets><img id="map" src="assets/normal-map.jpg"><img id="texture" src="assets/Moon_texture.jpg"></a-assets>
+
+        <a-sphere id="moon" radius="1" position="0 2 -4" color="#FFFFFF" material="src: #texture; normalMap :#map" segments-height="53" segments-width="53" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"></a-sphere>
+
+        <a-entity light="type: directional; color:#ff00ff; target:#moon; intensity: 1" position="1 0 1"> </a-entity>
+
+        <a-entity light="type: directional; color:#00ffff; target:#moon; intensity: 1" position="-1 0 1"> </a-entity>
+
+        <a-entity geometry="primitive:sphere; radius:.15" material="color:#FFFFFF; shader:flat" light="color:#FFFFFF; distance:120; intensity: 2; type:point" position="3 0 0"></a-entity>
+
+        <a-entity animation="property: rotation; to:0 360 0; loop:true; dur:10000; easinf:linear"></a-entity>
+
+      <a-sky color="#000099"></a-sky>
+      <a-camera  position="0 1.7 5"></a-camera>
+    </a-scene>
+  </body>
+</html> -->
